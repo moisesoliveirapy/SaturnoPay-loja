@@ -1,0 +1,171 @@
+/* Estilos globais */
+:root {
+  --cor-fundo: #f7f6f9;
+  --cor-primaria: #ad9db7;
+  --cor-secundaria: #c8c0ce;
+  --cor-terciaria: #ffcc01;
+  --cor-vermelho: #ff4d4d; /* Cor vermelha para o botão de cancelar */
+  --cor-texto: #333;
+  --cor-texto-claro: #ffffff;
+  --sombra: rgba(0, 0, 0, 0.1);
+  --sombra-leve: rgba(0, 0, 0, 0.05);
+  --transicao: all 0.3s ease; /* Define a transição suave para efeitos de hover */
+}
+
+/* Reseta margens e padding para todos os elementos */
+* {
+  box-sizing: border-box; /* Inclui padding e borda no cálculo do tamanho total */
+  margin: 0;
+  padding: 0;
+}
+
+/* Estiliza o corpo da página */
+body {
+  font-family: 'Raleway', sans-serif; /* Fonte escolhida para o texto */
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+  display: flex; /* Flexbox para organizar os elementos */
+  flex-direction: column; /* Organiza os itens em uma coluna */
+  min-height: 100vh; /* Garante que o corpo ocupe toda a altura da tela */
+}
+
+/* Estilo para o cabeçalho */
+header {
+  display: flex; /* Utiliza Flexbox para o layout */
+  justify-content: space-between; /* Espaça os itens entre as extremidades */
+  align-items: center; /* Alinha os itens verticalmente */
+  background-color: var(--cor-primaria);
+  padding: 10px 20px; /* Espaçamento interno do cabeçalho */
+  box-shadow: 0 2px 10px var(--sombra); /* Sombra para dar profundidade */
+}
+
+header img {
+  max-width: 150px; /* Limita a largura da imagem do logo */
+  max-height: 80px; /* Limita a altura da imagem do logo */
+}
+
+nav ul {
+  list-style: none; /* Remove os marcadores da lista */
+  display: flex; /* Exibe os itens da lista em linha */
+  gap: 20px; /* Espaçamento entre os itens do menu */
+}
+
+nav ul li a {
+  text-decoration: none; /* Remove o sublinhado dos links */
+  color: var(--cor-texto-claro);
+  font-weight: bold; /* Destaque em negrito para os links */
+}
+
+/* Efeito de hover para os links do menu */
+nav ul li a:hover {
+  color: var(--cor-terciaria);
+}
+
+/* Estilo para o conteúdo principal */
+main {
+  flex-grow: 1; /* Permite que o main ocupe espaço restante na tela */
+  padding: 40px; /* Espaçamento interno do conteúdo */
+  display: flex; /* Utiliza Flexbox para organizar os itens */
+  flex-direction: column; /* Organiza os itens em coluna */
+  align-items: center; /* Centraliza os itens horizontalmente */
+}
+
+/* Estilo para os itens do carrinho */
+.cart-items {
+  width: 100%; /* Ocupar toda a largura disponível */
+  max-width: 800px; /* Limita a largura máxima dos itens do carrinho */
+  margin-bottom: 20px; /* Espaçamento abaixo dos itens do carrinho */
+}
+
+/* Estilo para cada item do carrinho */
+.cart-item {
+  display: flex; /* Utiliza Flexbox para organizar o conteúdo do item */
+  border-bottom: 1px solid var(--cor-secundaria); /* Linha separando os itens */
+  padding: 20px 0; /* Espaçamento vertical para os itens */
+  align-items: center; /* Alinha os itens verticalmente */
+}
+
+.cart-item img {
+  width: 100px; /* Define a largura da imagem do produto */
+  height: auto; /* Mantém a proporção da imagem */
+  margin-right: 20px; /* Espaço à direita da imagem */
+}
+
+.item-details {
+  flex-grow: 1; /* Permite que este contêiner ocupe o espaço restante */
+}
+
+.item-details h2 {
+  font-size: 1.2rem; /* Tamanho do título do produto */
+  margin-bottom: 10px; /* Espaço abaixo do título */
+}
+
+.item-details span {
+  display: block; /* Faz com que cada informação apareça em uma nova linha */
+  margin-bottom: 10px; /* Espaço abaixo de cada informação */
+}
+
+/* Estilo para o controle de quantidade */
+.quantity-control {
+  display: flex; /* Organiza os controles em linha */
+  align-items: center; /* Centraliza verticalmente os itens */
+}
+
+.quantity-control label {
+  margin-right: 10px; /* Espaço à direita do rótulo da quantidade */
+}
+
+/* Estilo para ações do carrinho */
+.actions {
+  display: flex; /* Organiza os botões em linha */
+  justify-content: space-between; /* Espaça os botões entre as extremidades */
+  width: 100%; /* Ocupar toda a largura disponível */
+  max-width: 400px; /* Limita a largura máxima das ações */
+  margin-top: 20px; /* Espaço acima das ações */
+}
+
+/* Estilo geral dos botões */
+button {
+  background-color: var(--cor-terciaria); /* Cor de fundo padrão dos botões */
+  border: none; /* Remove a borda padrão dos botões */
+  color: var(--cor-texto-claro);
+  font-size: 1rem; /* Tamanho da fonte dos botões */
+  padding: 10px; /* Espaçamento interno do botão */
+  border-radius: 5px; /* Arredonda os cantos do botão */
+  cursor: pointer; /* Altera o cursor para indicar que é clicável */
+  flex-grow: 1; /* Permite que o botão ocupe o espaço restante */
+  margin: 0 10px; /* Adiciona espaçamento lateral entre os botões */
+  transition: var(--transicao); /* Transição suave para efeitos de hover */
+}
+
+/* Efeito de hover para os botões */
+button:hover {
+  background-color: var(--cor-primaria); /* Altera a cor de fundo ao passar o mouse */
+}
+
+/* Estilo para o botão de cancelar */
+.cancelar {
+  background-color: var(--cor-vermelho); /* Cor vermelha para indicar cancelamento */
+}
+
+.cancelar:hover {
+  background-color: darkred; /* Cor mais escura ao passar o mouse sobre o botão de cancelar */
+}
+
+/* Estilo para o rodapé */
+footer {
+  background-color: var(--cor-primaria);
+  color: var(--cor-texto-claro);
+  text-align: center; /* Centraliza o texto do rodapé */
+  padding: 10px 0; /* Espaçamento vertical do rodapé */
+  position: relative; /* Necessário para o posicionamento do rodapé */
+  bottom: 0; /* Posiciona o rodapé na parte inferior da página */
+  width: 100%; /* Ocupar toda a largura disponível */
+}
+
+
+
+
+
+
+

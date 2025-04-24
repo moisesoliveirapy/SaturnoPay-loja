@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/carrinho.css" rel="stylesheet" type="text/css" />
+    <title>Carrinho - Lua Cigana</title>
+</head>
+
+<body>
+    <!-- Cabeçalho separado -->
+    <header>
+        <div>
+            <img src="./img/logoLuaCigana.png" alt="Logo" />
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="carrinho.html">Carrinho</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Meu Carrinho</h1>
+        <div class="cart-items">
+            <!-- Estrutura para exibir cada item do carrinho -->
+            <div class="cart-item">
+                <img src="./img/vestidoMidiGiulie.jpeg" alt="Vestido Midi Giulie" />
+                <div class="item-details">
+                    <h2>Produto 1</h2>
+                    <span>Tamanho: Único</span>
+                    <span>R$ 99,90</span>
+                    <div class="quantity-control">
+                        <label for="quantidade1">Quantidade:</label>
+                        <input type="number" id="quantidade1" name="quantidade1" min="1" value="1" />
+                    </div>
+                </div>
+                <button class="remover">Remover</button>
+            </div>
+            <!-- Repetição da estrutura acima para os demais produtos -->
+            <div class="cart-item">
+                <img src="./img/conjuntoBia.jpeg" alt="Conjunto Bia" />
+                <div class="item-details">
+                    <h2>Produto 2</h2>
+                    <span>Tamanho: Único</span>
+                    <span>R$ 129,90</span>
+                    <div class="quantity-control">
+                        <label for="quantidade2">Quantidade:</label>
+                        <input type="number" id="quantidade2" name="quantidade2" min="1" value="1" />
+                    </div>
+                </div>
+                <button class="remover">Remover</button>
+            </div>
+            <div class="cart-item">
+                <img src="./img/vestidoLara.jpeg" alt="Vestido Lara" />
+                <div class="item-details">
+                    <h2>Produto 3</h2>
+                    <span>Tamanho: Único</span>
+                    <span>R$ 89,90</span>
+                    <div class="quantity-control">
+                        <label for="quantidade3">Quantidade:</label>
+                        <input type="number" id="quantidade3" name="quantidade3" min="1" value="1" />
+                    </div>
+                </div>
+                <button class="remover">Remover</button>
+            </div>
+            <div class="cart-item">
+                <img src="./img/vestidoCarol.jpeg" alt="Vestido Carol" />
+                <div class="item-details">
+                    <h2>Produto 4</h2>
+                    <span>Tamanho: Único</span>
+                    <span>R$ 199,90</span>
+                    <div class="quantity-control">
+                        <label for="quantidade4">Quantidade:</label>
+                        <input type="number" id="quantidade4" name="quantidade4" min="1" value="1" />
+                    </div>
+                </div>
+                <button class="remover">Remover</button>
+            </div>
+        </div>
+
+        <div class="actions">
+            <!-- Formulário para finalizar o pedido -->
+            <form action="pagamento.html" method="get">
+                <button type="submit">Finalizar Pedido</button>
+            </form>
+            <!-- Botão para cancelar o pedido e retornar ao index -->
+            <form action="index.html" method="get">
+                <button type="submit" class="cancelar">Cancelar Pedido</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        Lua Cigana - 2024 - Todos os direitos reservados.
+    </footer>
+</body>
+
+</html>

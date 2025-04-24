@@ -1,0 +1,197 @@
+/* Estilos globais */
+:root {
+  /* Definição de variáveis globais */
+  --cor-fundo: #f7f6f9; /* Cor clara de fundo */
+  --cor-primaria: #ad9db7; /* Cor primária */
+  --cor-secundaria: #c8c0ce; /* Cor secundária */
+  --cor-terciaria: #ffcc01; /* Cor terciária */
+  --cor-texto: #333; /* Cor do texto principal */
+  --cor-texto-claro: #ffffff; /* Cor do texto claro */
+  --sombra: rgba(0, 0, 0, 0.1); /* Sombra padrão */
+  --sombra-leve: rgba(0, 0, 0, 0.05); /* Sombra leve */
+  --transicao: all 0.3s ease; /* Transição suave */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo); /* Mantém a cor de fundo usando variável */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Garante que o body ocupe pelo menos a altura da janela */
+}
+
+/* Estilo para o cabeçalho */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--cor-primaria);
+  padding: 10px 20px;
+  box-shadow: 0 2px 10px var(--sombra);
+}
+
+header img {
+  max-width: 150px;
+  max-height: 80px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--cor-texto-claro);
+  font-weight: bold;
+  font-size: 1rem;
+  position: relative;
+}
+
+nav ul li a:hover {
+  color: var(--cor-terciaria);
+  background-color: rgba(255, 255, 255, 0.2);
+  border-bottom: 3px solid var(--cor-terciaria);
+  border-radius: 5px;
+  padding: 5px 10px;
+  transition: var(--transicao);
+}
+
+/* Estilo para o título do catálogo */
+h1 {
+  font-size: 2.5rem;
+  color: var(--cor-texto);
+  text-align: center;
+  margin-bottom: 20px; /* Espaçamento entre o título e o conteúdo */
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between; /* Espaço entre o título e o botão */
+  align-items: center; /* Alinha verticalmente */
+}
+
+/* Estilo para o botão "Ir para o Carrinho" */
+.button-carrinho {
+  background-color: var(--cor-secundaria); /* Cor de fundo */
+  color: var(--cor-texto-claro); /* Cor do texto */
+  border: none; /* Sem borda */
+  padding: 10px 20px; /* Espaçamento interno */
+  border-radius: 5px; /* Bordas arredondadas */
+  font-size: 1rem; /* Tamanho da fonte */
+  cursor: pointer; /* Cursor pointer */
+  transition: var(--transicao); /* Transição suave */
+  margin-left: 20px; /* Espaçamento à esquerda */
+  box-shadow: 0 4px 10px var(--sombra); /* Sombra do botão */
+}
+
+/* Efeito hover para o botão "Ir para o Carrinho" */
+.button-carrinho:hover {
+  background-color: var(--cor-terciaria); /* Muda a cor de fundo ao passar o mouse */
+  transform: translateY(-2px); /* Levanta o botão ao passar o mouse */
+}
+
+/* Estilo para o conteúdo principal */
+main {
+  flex-grow: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Estilo para o layout dos produtos */
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas fixas */
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px; /* Limita a largura máxima do grid */
+}
+
+.product-card {
+  background-color: var(--cor-texto-claro);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px var(--sombra-leve);
+  transition: var(--transicao);
+  padding: 20px;
+  text-align: center;
+}
+
+.product-card img {
+  width: 100%; /* Imagem ajusta ao card */
+  height: auto; /* Ajusta a altura para manter a proporção original */
+  max-height: 300px; /* Define uma altura máxima para evitar distorção */
+  object-fit: contain; /* Garante que a imagem seja mostrada por completo */
+  margin-bottom: 15px;
+  border-bottom: 1px solid var(--cor-secundaria);
+  padding-bottom: 15px;
+}
+
+.product-card h2 {
+  font-size: 1.5rem;
+  color: var(--cor-texto);
+  margin-bottom: 10px;
+}
+
+.product-card p {
+  font-size: 1rem;
+  color: var(--cor-secundaria);
+  margin-bottom: 15px;
+}
+
+.product-card span {
+  font-size: 1.2rem;
+  color: var(--cor-terciaria);
+  font-weight: bold;
+  display: block;
+  margin-bottom: 15px;
+}
+
+/* Estilo para o botão "Adicionar ao Carrinho" */
+.product-card button {
+  background-color: var(--cor-terciaria); /* Cor de fundo */
+  color: var(--cor-texto-claro); /* Cor do texto */
+  border: none; /* Sem borda */
+  padding: 12px 24px; /* Espaçamento interno */
+  border-radius: 5px; /* Bordas arredondadas */
+  font-size: 1rem; /* Tamanho da fonte */
+  cursor: pointer; /* Cursor pointer */
+  transition: var(--transicao); /* Transição suave */
+  margin-top: 10px; /* Espaçamento acima do botão */
+  box-shadow: 0 4px 10px var(--sombra); /* Sombra do botão */
+}
+
+/* Efeito hover para o botão "Adicionar ao Carrinho" */
+.product-card button:hover {
+  background-color: var(--cor-primaria); /* Muda a cor de fundo ao passar o mouse */
+  transform: translateY(-2px); /* Levanta o botão ao passar o mouse */
+}
+
+/* Estilo para o rodapé */
+footer {
+  background-color: var(--cor-primaria);
+  color: var(--cor-texto-claro);
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+

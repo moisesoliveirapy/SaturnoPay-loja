@@ -1,0 +1,108 @@
+/* Estilos globais */
+:root {
+  --cor-fundo: #ad9db7; /* Cor clara de fundo */
+  --cor-primaria: #9c8aa8; /* Cor primária */
+  --cor-terciaria: #ffcc01; /* Cor terciária */
+  --cor-texto: #ffffff; /* Cor do texto */
+  --cor-texto_secundario: #333; /* Cor do texto secundário */
+  --sombra: rgba(0, 0, 0, 0.1); /* Sombra padrão */
+}
+
+/* Define que todos os elementos usarão a modelagem de caixa padrão */
+* {
+  box-sizing: border-box; /* Garantir que o padding e a borda sejam incluídos nas larguras */
+}
+
+/* Estilo para o corpo da página */
+body {
+  margin: 0; /* Remove margens padrão */
+  padding: 0; /* Remove preenchimentos padrão */
+  font-family: 'Raleway', sans-serif; /* Usando a fonte Raleway */
+  color: var(--cor-texto_secundario); /* Define a cor do texto usando variável */
+  background-color: var(--cor-fundo); /* Define a cor de fundo usando variável */
+  display: flex; /* Define o layout como flexível */
+  flex-direction: column; /* Coloca os filhos em coluna */
+  min-height: 100vh; /* Garante que o body ocupe toda a altura da tela */
+}
+
+/* Estilo para o cabeçalho */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--cor-primaria);
+  padding: 10px 20px;
+  box-shadow: 0 2px 10px var(--sombra);
+}
+
+header img {
+  max-width: 150px;
+  max-height: 80px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--cor-texto);
+  font-weight: bold;
+  font-size: 1rem;
+  position: relative;
+}
+
+nav ul li a:hover {
+  color: var(--cor-terciaria);
+  background-color: rgba(255, 255, 255, 0.2);
+  border-bottom: 3px solid var(--cor-terciaria);
+  border-radius: 5px;
+  padding: 5px 10px;
+  transition: 0.3s; /* Transição suave */
+}
+
+/* Estilo para o conteúdo principal */
+main {
+  flex-grow: 1; /* Ocupa o espaço disponível */
+  display: flex; /* Layout flexível para o conteúdo principal */
+  flex-direction: column; /* Coloca os itens em coluna */
+  align-items: center; /* Centraliza os itens */
+  padding: 40px 20px; /* Adiciona preenchimento ao conteúdo principal */
+}
+
+/* Estilo para o título principal */
+h1 {
+  color: var(--cor-texto_secundario);
+  margin-bottom: 20px; /* Espaço abaixo do título */
+}
+
+/* Estilo para o container de texto */
+.text-container {
+  max-width: 800px; /* Define a largura máxima do container de texto */
+  background: var(--cor-texto); /* Fundo branco para o texto */
+  border-radius: 8px; /* Bordas arredondadas */
+  padding: 20px; /* Preenchimento interno */
+  box-shadow: 0 4px 10px var(--sombra); /* Sombra do container */
+}
+
+/* Estilo para o rodapé */
+footer {
+  background-color: var(--cor-primaria); /* Define a cor de fundo do rodapé */
+  color: var(--cor-texto); /* Define a cor do texto do rodapé */
+  text-align: center; /* Centraliza o texto do rodapé */
+  padding: 10px 0; /* Adiciona preenchimento ao rodapé */
+  width: 100%; /* Rodapé ocupa toda a largura da tela */
+  font-size: 0.9rem; /* Define tamanho de fonte menor para o rodapé */
+  margin-top: auto; /* Garante que o rodapé fique no final da página */
+}
+
+/* Estilo responsivo */
+@media (max-width: 768px) {
+  /* Ajustes para telas menores que 768px */
+  main {
+    padding: 20px; /* Ajusta o padding do main */
+  }
+}
+

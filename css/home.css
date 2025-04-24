@@ -1,0 +1,213 @@
+/* Estilos globais */
+:root {
+  --cor-fundo: #ad9db7; /* Cor clara de fundo */
+  --cor-primaria: #9c8aa8; /* Cor primária */
+  --cor-terciaria: #ffcc01; /* Cor terciária */
+  --cor-texto: #ffffff; /* Cor do texto */
+  --cor-texto-secundario: #333; /* Cor do texto secundário */
+  --sombra: rgba(0, 0, 0, 0.1); /* Sombra padrão */
+}
+
+/* Define que todos os elementos usarão a modelagem de caixa padrão */
+* {
+  box-sizing: border-box; /* Garante que o padding e a borda sejam incluídos nas larguras */
+}
+
+/* Estilo para o corpo da página */
+body {
+  margin: 0; /* Remove margens padrão */
+  padding: 0; /* Remove preenchimentos padrão */
+  width: 100%; /* Ocupa 100% da largura da tela */
+  height: 100%; /* Ocupa 100% da altura da tela */
+  font-family: 'Raleway', sans-serif; /* Usando a fonte Raleway */
+  color: var(--cor-texto-secundario); /* Define a cor do texto usando variável */
+  background-color: var(--cor-fundo); /* Define a cor de fundo usando variável */
+  display: flex; /* Define o layout como flexível */
+  flex-direction: column; /* Coloca os filhos em coluna */
+  min-height: 100vh; /* Garante que o body ocupe toda a altura da tela */
+}
+
+header {
+  display: flex; /* Usando flexbox para o cabeçalho */
+  justify-content: space-between; /* Espaço entre logo e navegação */
+  align-items: center; /* Alinha itens verticalmente ao centro */
+  background-color: var(--cor-primaria); /* Cor de fundo do cabeçalho */
+  padding: 10px 20px; /* Preenchimento interno do cabeçalho */
+  box-shadow: 0 2px 10px var(--sombra); /* Sombra do cabeçalho */
+}
+
+header img {
+  max-width: 150px; /* Largura máxima da logo */
+  max-height: 80px; /* Altura máxima da logo */
+}
+
+nav ul {
+  list-style: none; /* Remove os marcadores da lista */
+  display: flex; /* Usa flexbox para o menu de navegação */
+  gap: 20px; /* Espaço entre os itens da lista */
+}
+
+nav ul li a {
+  text-decoration: none; /* Remove sublinhado dos links */
+  color: var(--cor-texto); /* Cor do texto dos links */
+  font-weight: bold; /* Texto em negrito */
+  font-size: 1rem; /* Tamanho da fonte do link */
+  position: relative; /* Necessário para posicionamento de pseudo-elementos */
+}
+
+nav ul li a:hover {
+  color: var(--cor-terciaria); /* Muda a cor do link ao passar o mouse */
+  background-color: rgba(255, 255, 255, 0.2); /* Fundo ao passar o mouse */
+  border-bottom: 3px solid var(--cor-terciaria); /* Borda inferior ao passar o mouse */
+  border-radius: 5px; /* Bordas arredondadas do fundo */
+  padding: 5px 10px; /* Preenchimento interno do link */
+  transition: 0.3s ease; /* Transição suave para as mudanças de estado */
+}
+
+/* Estilo para o conteúdo principal */
+main {
+  flex-grow: 1; /* Ocupa o espaço disponível */
+  display: flex; /* Layout flexível para o conteúdo principal */
+  justify-content: space-between; /* Espaço entre os itens do conteúdo principal */
+  align-items: flex-start; /* Alinha itens no topo */
+  padding: 80px 20px 40px; /* Adiciona preenchimento ao conteúdo principal */
+  flex-wrap: wrap; /* Permite que os itens se movam para a próxima linha em telas menores */
+}
+
+/* Estilo para o container de texto */
+.text-container {
+  max-width: 800px; /* Define a largura máxima do container de texto */
+  flex: 1 1 50%; /* Permite que o texto ocupe metade da largura disponível */
+  margin-right: 20px; /* Espaço entre texto e imagem */
+}
+
+/* Estilo para destaque no texto */
+.highlight {
+  font-size: 5rem; /* Define tamanho grande para texto destacado */
+  color: var(--cor-texto-secundario); /* Define a cor do texto destacado */
+  margin: 0; /* Remove margens padrão */
+}
+
+/* Estilo para texto secundário */
+.subtext {
+  font-size: 3rem; /* Define tamanho menor para texto secundário */
+  color: var(--cor-texto); /* Define a cor do texto secundário */
+  margin: 10px 0; /* Margem vertical */
+}
+
+/* Estilo para imagem lateral */
+.side-image {
+  max-width: 580px; /* Limita a largura máxima da imagem */
+  width: 100%; /* Garante que a imagem ocupe 100% do seu container */
+  height: auto; /* Mantém a proporção da imagem */
+  border-radius: 8px; /* Arredonda as bordas da imagem */
+  flex: 1 1 40%; /* Permite que a imagem ocupe até 40% da largura disponível */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Adiciona sombra à imagem */
+}
+
+/* Estilo para o rodapé */
+footer {
+  background-color: var(--cor-primaria); /* Define a cor de fundo do rodapé */
+  color: var(--cor-texto); /* Define a cor do texto do rodapé */
+  text-align: center; /* Centraliza o texto do rodapé */
+  padding: 10px 0; /* Adiciona preenchimento ao rodapé */
+  width: 100%; /* Rodapé ocupa toda a largura da tela */
+  font-size: 0.9rem; /* Define tamanho de fonte menor para o rodapé */
+  margin-top: auto; /* Garante que o rodapé fique no final da página */
+}
+
+/* Estilo responsivo */
+@media (max-width: 768px) {
+  /* Ajustes para telas menores que 768px */
+  main {
+    flex-direction: column; /* Muda a direção para coluna */
+    align-items: center; /* Centraliza os itens no eixo principal */
+  }
+
+  .text-container {
+    text-align: center; /* Centraliza o texto */
+    margin-right: 0; /* Remove a margem direita */
+  }
+
+  .highlight {
+    font-size: 3rem; /* Reduz o tamanho do texto destacado */
+  }
+
+  .subtext {
+    font-size: 2rem; /* Reduz o tamanho do texto secundário */
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    padding-left: 0;
+  }
+
+  nav ul li a {
+    width: 100%;
+    display: block;
+    padding: 10px;
+    text-align: left;
+  }
+
+  .highlight {
+    font-size: 2.5rem;
+  }
+
+  .subtext {
+    font-size: 1.5rem;
+  }
+
+  .side-image {
+    max-width: 100%;
+    margin-top: 20px;
+  }
+}
+
+/* Botão do menu hamburguer */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: var(--cor-texto);
+  cursor: pointer;
+}
+
+/* Estilos para o menu hamburguer quando em telas pequenas */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+
+  nav ul {
+    flex-direction: column;
+    background-color: var(--cor-primaria);
+    width: 100%;
+    display: none;
+    padding: 10px 0;
+  }
+
+  nav ul li {
+    width: 100%;
+    text-align: center;
+    margin: 5px 0;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+}
+
+
+
